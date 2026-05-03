@@ -1,263 +1,220 @@
-const days = [
-  {
-    number: 1,
-    title: "Comprensión clara",
-    description:
-      "Aprendé a diferenciar hechos, emociones e interpretaciones.",
-    status: "completed",
-  },
-  {
-    number: 2,
-    title: "Dividir el problema",
-    description:
-      "Transformá problemas grandes en pasos manejables.",
-    status: "current",
-  },
-  {
-    number: 3,
-    title: "Generar soluciones",
-    description:
-      "Abrí posibilidades y evitá el pensamiento rígido.",
-    status: "available",
-  },
-  {
-    number: 4,
-    title: "Priorizar",
-    description:
-      "Enfocá tu energía en lo realmente importante.",
-    status: "locked",
-  },
-  {
-    number: 5,
-    title: "Plan de acción",
-    description:
-      "Convertí claridad en movimiento concreto.",
-    status: "locked",
-  },
-];
+"use client";
 
-const skills = [
-  "Claridad",
-  "Foco",
-  "Decisión",
-  "Acción",
-];
+import { motion } from "framer-motion";
 
-export default function DashboardPage() {
+export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-gradient-to-b from-[#0B1020] via-[#111827] to-black text-white">
-      <section className="relative px-6 py-10">
-        <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-violet-500/20 blur-[160px] rounded-full pointer-events-none" />
+    <main className="min-h-screen overflow-hidden bg-black text-white">
+      <section className="relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1020] via-[#111827] to-black" />
 
-        <div className="relative max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-14">
+        <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-violet-500/20 blur-[160px] rounded-full" />
+
+        <div className="absolute bottom-[-200px] right-[-100px] w-[500px] h-[500px] bg-cyan-500/10 blur-[140px] rounded-full" />
+
+        <div className="relative max-w-7xl mx-auto px-6 pt-10 pb-24">
+          <nav className="flex items-center justify-between mb-24">
             <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-violet-300 mb-3">
-                Tu experiencia
-              </p>
-
-              <h1 className="text-5xl font-bold tracking-tight mb-4">
+              <p className="text-lg font-semibold tracking-tight">
                 Claridad 21
-              </h1>
-
-              <p className="text-zinc-400 text-lg max-w-2xl leading-relaxed">
-                Avanzá día por día y entrená una forma más clara de pensar,
-                decidir y actuar.
               </p>
             </div>
 
             <a
-              href="/"
-              className="hidden md:inline-flex rounded-full border border-white/10 bg-white/5 backdrop-blur px-5 py-3 text-sm hover:bg-white/10 transition"
+              href="/dashboard"
+              className="rounded-full border border-white/10 bg-white/5 backdrop-blur px-5 py-2 text-sm hover:bg-white/10 transition"
             >
-              Volver al inicio
+              Entrar
             </a>
-          </div>
+          </nav>
 
-          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 mb-10">
-            <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-8">
-              <div className="flex items-center justify-between mb-8">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <p className="uppercase tracking-[0.3em] text-violet-300 text-sm mb-6">
+                Experiencia interactiva de 21 días
+              </p>
+
+              <h1 className="text-6xl md:text-7xl font-bold tracking-tight leading-[0.95] mb-8">
+                Aprendé a resolver problemas con más claridad.
+              </h1>
+
+              <p className="text-xl text-zinc-300 leading-relaxed mb-10 max-w-2xl">
+                Una experiencia visual, práctica e interactiva para ayudarte a
+                pensar mejor, ordenar situaciones complejas y pasar a la acción
+                con más foco.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="/dashboard"
+                  className="rounded-full bg-white text-black px-7 py-4 font-semibold hover:bg-zinc-200 transition"
+                >
+                  Comenzar experiencia
+                </a>
+
+                <a
+                  href="#como-funciona"
+                  className="rounded-full border border-white/10 bg-white/5 backdrop-blur px-7 py-4 font-semibold hover:bg-white/10 transition"
+                >
+                  Cómo funciona
+                </a>
+              </div>
+
+              <div className="flex gap-8 mt-14">
                 <div>
-                  <p className="text-sm text-zinc-400 mb-2">
-                    Progreso actual
+                  <p className="text-3xl font-bold mb-1">21</p>
+                  <p className="text-zinc-400 text-sm">
+                    días de experiencia
                   </p>
+                </div>
 
-                  <h2 className="text-3xl font-bold">
-                    3 de 21 días
+                <div>
+                  <p className="text-3xl font-bold mb-1">+50</p>
+                  <p className="text-zinc-400 text-sm">
+                    desafíos interactivos
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-3xl font-bold mb-1">100%</p>
+                  <p className="text-zinc-400 text-sm">mobile-first</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, y: 32, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/20 to-cyan-500/20 blur-3xl rounded-[40px]" />
+
+              <div className="relative rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl p-6 overflow-hidden">
+                <div className="rounded-[32px] bg-black/40 border border-white/10 p-6 mb-6">
+                  <p className="text-sm text-violet-300 mb-3">Día 1 de 21</p>
+
+                  <h2 className="text-3xl font-bold mb-4">
+                    Comprensión clara
                   </h2>
+
+                  <p className="text-zinc-300 leading-relaxed">
+                    La mayoría de las personas intenta resolver problemas sin
+                    entender realmente qué está pasando.
+                  </p>
                 </div>
 
-                <div className="w-20 h-20 rounded-full border-4 border-violet-400/30 flex items-center justify-center text-xl font-bold">
-                  14%
-                </div>
-              </div>
+                <div className="grid gap-4">
+                  <div className="rounded-2xl bg-black/40 border border-white/10 p-5">
+                    <p className="text-sm text-zinc-500 mb-2">
+                      Challenge interactivo
+                    </p>
 
-              <div className="h-4 rounded-full bg-white/10 overflow-hidden mb-6">
-                <div className="h-full w-[14%] rounded-full bg-gradient-to-r from-violet-400 to-cyan-400" />
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
-                <p className="text-sm text-zinc-400 mb-2">
-                  Continuar experiencia
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-1">
-                      Día 3 — Generar soluciones
-                    </h3>
-
-                    <p className="text-zinc-400">
-                      Abrí posibilidades y evitá el pensamiento rígido.
+                    <p className="font-medium">
+                      Diferenciar hechos, emociones e interpretaciones.
                     </p>
                   </div>
 
-                  <a
-                    href="/dias/3"
-                    className="rounded-full bg-white text-black px-5 py-3 text-sm font-semibold whitespace-nowrap"
-                  >
-                    Continuar
-                  </a>
-                </div>
-              </div>
-            </div>
+                  <div className="rounded-2xl bg-black/40 border border-white/10 p-5">
+                    <p className="text-sm text-zinc-500 mb-2">
+                      Recurso del día
+                    </p>
 
-            <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-8">
-              <p className="text-sm text-zinc-400 mb-4">
-                Habilidades entrenadas
-              </p>
+                    <p className="font-medium">
+                      Cómo dejar de reaccionar automáticamente.
+                    </p>
+                  </div>
 
-              <div className="flex flex-wrap gap-3 mb-8">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-white/10 bg-black/30 px-4 py-2 text-sm"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+                  <div className="rounded-2xl bg-black/40 border border-white/10 p-5">
+                    <p className="text-sm text-zinc-500 mb-2">Insight clave</p>
 
-              <div className="rounded-2xl border border-violet-400/20 bg-violet-500/10 p-5">
-                <p className="text-violet-200 text-sm mb-3">
-                  Insight del día
-                </p>
-
-                <p className="text-lg leading-relaxed">
-                  La claridad aparece más rápido cuando dejás de intentar
-                  resolver todo al mismo tiempo.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-12">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-violet-300 mb-3">
-                  Recorrido
-                </p>
-
-                <h2 className="text-4xl font-bold tracking-tight">
-                  Tus próximos desafíos
-                </h2>
-              </div>
-            </div>
-
-            <div className="grid gap-5">
-              {days.map((day) => (
-                <div
-                  key={day.number}
-                  className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:bg-white/[0.07] transition"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
-                    <div>
-                      <p className="text-sm text-zinc-400 mb-2">
-                        Día {day.number}
-                      </p>
-
-                      <h3 className="text-2xl font-semibold mb-3">
-                        {day.title}
-                      </h3>
-
-                      <p className="text-zinc-400 max-w-2xl leading-relaxed">
-                        {day.description}
-                      </p>
-                    </div>
-
-                    <div>
-                      {day.status === "completed" && (
-                        <a
-                          href={`/dias/${day.number}`}
-                          className="inline-flex rounded-full border border-emerald-400/20 bg-emerald-500/10 px-5 py-3 text-sm text-emerald-200"
-                        >
-                          Revisar día
-                        </a>
-                      )}
-
-                      {day.status === "current" && (
-                        <a
-                          href={`/dias/${day.number}`}
-                          className="inline-flex rounded-full bg-white text-black px-6 py-3 text-sm font-semibold"
-                        >
-                          Continuar
-                        </a>
-                      )}
-
-                      {day.status === "available" && (
-                        <a
-                          href={`/dias/${day.number}`}
-                          className="inline-flex rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm"
-                        >
-                          Comenzar
-                        </a>
-                      )}
-
-                      {day.status === "locked" && (
-                        <span className="inline-flex rounded-full border border-white/10 bg-black/30 px-6 py-3 text-sm text-zinc-500">
-                          Bloqueado
-                        </span>
-                      )}
-                    </div>
+                    <p className="font-medium">
+                      La claridad reduce ansiedad.
+                    </p>
                   </div>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <section id="como-funciona" className="mt-40">
+            <motion.div
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <p className="uppercase tracking-[0.3em] text-violet-300 text-sm mb-5">
+                Cómo funciona
+              </p>
+
+              <h2 className="text-5xl font-bold tracking-tight mb-6">
+                Una experiencia distinta a un curso tradicional
+              </h2>
+
+              <p className="text-zinc-400 text-xl max-w-3xl mx-auto leading-relaxed">
+                Cada día combina reflexión, desafíos interactivos, recursos y
+                ejercicios prácticos diseñados para ayudarte a pensar mejor.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-4 gap-5">
+              {[
+                {
+                  number: "01",
+                  title: "Observá",
+                  text: "Entendé mejor qué está pasando antes de reaccionar.",
+                  color: "text-violet-300",
+                },
+                {
+                  number: "02",
+                  title: "Ordená",
+                  text: "Dividí problemas complejos en partes manejables.",
+                  color: "text-cyan-300",
+                },
+                {
+                  number: "03",
+                  title: "Decidí",
+                  text: "Generá alternativas y encontrá caminos posibles.",
+                  color: "text-pink-300",
+                },
+                {
+                  number: "04",
+                  title: "Actuá",
+                  text: "Convertí claridad mental en movimiento real.",
+                  color: "text-emerald-300",
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.number}
+                  className="rounded-[32px] border border-white/10 bg-white/5 p-8 hover:bg-white/[0.08] transition"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: "easeOut",
+                  }}
+                >
+                  <p className={`${item.color} text-sm mb-4`}>
+                    {item.number}
+                  </p>
+
+                  <h3 className="text-2xl font-semibold mb-4">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-zinc-400 leading-relaxed">{item.text}</p>
+                </motion.div>
               ))}
             </div>
-          </div>
-
-          <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-8">
-            <div className="grid md:grid-cols-3 gap-5">
-              <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
-                <p className="text-sm text-zinc-400 mb-3">
-                  🎥 Recursos
-                </p>
-
-                <p className="font-medium">
-                  Videos, lecturas y ejercicios prácticos.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
-                <p className="text-sm text-zinc-400 mb-3">
-                  🧠 Insights
-                </p>
-
-                <p className="font-medium">
-                  Ideas breves para ayudarte a pensar mejor.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
-                <p className="text-sm text-zinc-400 mb-3">
-                  ⚡ Challenges
-                </p>
-
-                <p className="font-medium">
-                  Micro desafíos interactivos todos los días.
-                </p>
-              </div>
-            </div>
-          </div>
+          </section>
         </div>
       </section>
     </main>

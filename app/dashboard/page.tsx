@@ -51,7 +51,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="/dashboard"
-                  className="rounded-full bg-white text-black px-7 py-4 font-semibold hover:bg-zinc-200 transition"
+                  className="rounded-full bg-white text-black px-7 py-4 font-semibold transition-all duration-300 hover:bg-zinc-200 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)]"
                 >
                   Comenzar experiencia
                 </a>
@@ -94,7 +94,7 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/20 to-cyan-500/20 blur-3xl rounded-[40px]" />
 
-              <div className="relative rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl p-6 overflow-hidden">
+              <div className="relative rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl p-6 overflow-hidden shadow-[0_0_80px_rgba(139,92,246,0.12)]">
                 <div className="rounded-[32px] bg-black/40 border border-white/10 p-6 mb-6">
                   <p className="text-sm text-violet-300 mb-3">Día 1 de 21</p>
 
@@ -192,7 +192,7 @@ export default function Home() {
               ].map((item, index) => (
                 <motion.div
                   key={item.number}
-                  className="rounded-[32px] border border-white/10 bg-white/5 p-8 hover:bg-white/[0.08] transition"
+                  className="rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-500 hover:bg-white/[0.08] hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(139,92,246,0.15)]"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
